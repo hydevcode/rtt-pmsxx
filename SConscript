@@ -5,12 +5,15 @@ src   = []
 cwd   = GetCurrentDir()
 
 # add pmsxx src files.
-if GetDepend('PKG_USING_PMSXX'):
-    src += Glob('src/pmsxx.c')
-    src += Glob('src/sensor_plantower_pmsxx.c')
+src += ['src/pmsxx.c']
+
+if GetDepend('PKG_PMSXX_USING_SENSOR_V1'):
+    src += ['src/sensor_plantower_pmsxx.c']
 
 if GetDepend('PKG_USING_PMSXX_SAMPLE'):
     src += Glob('examples/pmsxx_sample.c')
+
+if GetDepend('PKG_USING_SENSOR_V1_PMSXX_SAMPLE'):
     src += Glob('examples/sensor_pmsxx_sample.c')
 
 # add pmsxx include path.

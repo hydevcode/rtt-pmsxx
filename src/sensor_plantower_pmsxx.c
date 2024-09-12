@@ -9,7 +9,7 @@
  */
 
 #include <board.h>
-#include "pmsxx.h"
+#include "sensor_plantower_pmsxx.h"
 
 #define DBG_TAG                           "sensor.plantower.pms"
 #ifdef PKG_USING_PMSXX_DEBUG
@@ -27,7 +27,7 @@
 #define SENSOR_DUST_PERIOD_MIN            (200)
 
 
-static rt_size_t _pmsxx_polling_get_data(struct rt_sensor_device *sensor, void *buf)
+static RT_SIZE_TYPE _pmsxx_polling_get_data(struct rt_sensor_device *sensor, void *buf)
 {
     struct rt_sensor_data *sensor_data = buf;
     pms_device_t dev = (pms_device_t)sensor->config.intf.user_data;
@@ -45,7 +45,7 @@ static rt_size_t _pmsxx_polling_get_data(struct rt_sensor_device *sensor, void *
     return 1;
 }
 
-static rt_size_t pmsxx_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
+static RT_SIZE_TYPE pmsxx_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
 {
     if (sensor->config.mode == RT_SENSOR_MODE_POLLING)
     {
@@ -142,14 +142,14 @@ static rt_err_t _pmsxx_init(struct rt_sensor_intf *intf)
 }
 
 /**
- * Call function rt_hw_pms_init for initial and register a pmsxx sensor.
+ * Call function rt_hw_pmsxx_init for initial and register a pmsxx sensor.
  *
  * @param name  the name will be register into device framework
  * @param cfg   sensor config
  *
  * @return the result
  */
-rt_err_t rt_hw_pms_init(const char *name, struct rt_sensor_config *cfg)
+rt_err_t rt_hw_pmsxx_init(const char *name, struct rt_sensor_config *cfg)
 {
     int result;
     rt_sensor_t sensor = RT_NULL;

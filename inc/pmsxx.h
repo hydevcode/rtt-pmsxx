@@ -13,7 +13,7 @@
 
 #include <rtthread.h>
 #include <rtdevice.h>
-#include <sensor.h>
+
 
 #define PMSLIB_VERSION       "0.2.0"
 
@@ -129,6 +129,6 @@ void         pms_show_response(pms_response_t resp);
 void         pms_dump(const char *buf, rt_uint16_t size);
 
 
-rt_err_t rt_hw_pms_init(const char *name, struct rt_sensor_config *cfg);
+// rt_err_t rt_hw_pms_init(const char *name, struct rt_sensor_config *cfg);
 
 #endif /* __PMSXX_H__ */

@@ -11,7 +11,7 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
-#include "pmsxx.h"
+#include "sensor_plantower_pmsxx.h"
 
 #ifndef PKG_USING_PMSXX_SAMPLE_UART
 #define PMSXX_UART_NAME                    "uart3"
@@ -124,7 +124,7 @@ static int rt_hw_pms_port(void)
     
     cfg.intf.type = RT_SENSOR_INTF_UART;
     cfg.intf.dev_name = PMSXX_UART_NAME;
-    rt_hw_pms_init("pms", &cfg);
+    rt_hw_pmsxx_init("pms", &cfg);
     
     return RT_EOK;
 }

@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2006-2024, RT-Thread Development Team
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Change Logs:
+ * Date           Author       Notes
+ * 2020-08-19     Administrator       the first version
+ */
+#ifndef __SENSOR_MEAS_MS5805_H__
+#define __SENSOR_MEAS_MS5805_H__
+#include <rtdevice.h>
+
+#if defined(RT_VERSION_CHECK)
+    #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 0, 2))
+        #define RT_SIZE_TYPE   rt_ssize_t
+    #else
+        #define RT_SIZE_TYPE   rt_size_t
+    #endif
+#endif
+#include "pmsxx.h"
+
+rt_err_t rt_hw_pmsxx_init(const char *name, struct rt_sensor_config *cfg);
+
+#endif /*__SENSOR_MEAS_MS5805_H__*/
