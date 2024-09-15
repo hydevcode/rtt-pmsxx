@@ -9,9 +9,9 @@
  */
 
 #include <board.h>
-#include "sensor_plantower_pmsxx.h"
+#include "plantower_pmsxx_sensor_v1.h"
 
-#define DBG_TAG                           "sensor.plantower.pms"
+#define DBG_TAG                           "plantower.pms.sensor.v1"
 #ifdef PKG_USING_PMSXX_DEBUG
 #define DBG_LVL                           DBG_LOG
 #else

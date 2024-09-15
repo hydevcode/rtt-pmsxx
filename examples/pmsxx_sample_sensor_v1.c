@@ -11,7 +11,7 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
-#include "sensor_plantower_pmsxx.h"
+#include "plantower_pmsxx_sensor_v1.h"
 
 #ifndef PKG_USING_PMSXX_SAMPLE_UART
 #define PMSXX_UART_NAME                    "uart3"
